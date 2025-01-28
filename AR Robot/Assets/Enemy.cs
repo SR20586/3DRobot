@@ -22,11 +22,13 @@ public class Enemy : MonoBehaviour
         // ターゲットに向かって移動
         transform.position += transform.forward * speed * Time.deltaTime;
     }
-    private void OnCollisionEnter(Collision collision) //ぶつかったら消える命令文開始
+    private void OnTriggerEnter(Collider other) //ぶつかったら消える命令文開始
     {
-        if (collision.gameObject.CompareTag("Destroy1"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
+        GameObject BulletObject = GameObject.Find("Cube(Clone)");
+
+        if (other.gameObject.CompareTag("Destroy2"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
         {
-            Destroy(gameObject);//このゲームオブジェクトを消滅させる
+            Destroy(BulletObject);//このゲームオブジェクトを消滅させる
         }
     }
 }

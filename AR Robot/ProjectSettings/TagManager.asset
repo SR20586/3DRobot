@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Destroy1
   - Destroy2
+  - Emergency
   layers:
   - Default
   - TransparentFX

@@ -816,7 +816,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -849,21 +849,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1211664874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211664864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 555d4456f806c6e429939efb9c242786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies: []
-  displayDistance: 5
-  imageObject: {fileID: 1360807346}
 --- !u!1 &1246526608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,6 +1390,7 @@ GameObject:
   - component: {fileID: 1907230482}
   - component: {fileID: 1907230483}
   - component: {fileID: 1907230484}
+  - component: {fileID: 1907230485}
   m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
@@ -1455,9 +1441,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555d4456f806c6e429939efb9c242786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
-  displayDistance: 100
   imageObject: {fileID: 1360807346}
+  targetObjectName: robot2(Clone)
+--- !u!65 &1907230485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907230481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2033405830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,9 +1657,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1211664871}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1211664874}
   m_SourcePrefab: {fileID: 100100000, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
 --- !u!1001 &8347803772149581528
 PrefabInstance:
