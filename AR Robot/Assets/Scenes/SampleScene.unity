@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1211664864}
-  spawnInterval: 10
+  spawnInterval: 19
   spawnAreaSize: {x: 12, y: 20, z: 100}
   spawnCenter: {fileID: 392674298}
 --- !u!4 &392674298
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1211664864}
-  spawnInterval: 3
+  spawnInterval: 10
   spawnAreaSize: {x: 100, y: 20, z: 12}
   spawnCenter: {fileID: 604154175}
 --- !u!1 &705507993
@@ -874,7 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97f32f96aa1bc84a8dfd969443c9e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1115446145}
+  player: {fileID: 1600061954}
   speed: 3
   rotationSpeed: 5
 --- !u!65 &1211664871
@@ -1002,6 +1002,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249051950}
+  - component: {fileID: 1249051952}
+  - component: {fileID: 1249051951}
   m_Layer: 0
   m_Name: BulletSpawn
   m_TagString: Untagged
@@ -1024,6 +1026,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1600061954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249051951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249051949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7ff6d799d7bbf4594d1e79dc2c6ff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1249051952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249051949}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5699301, y: 1.5332972, z: 1.4257622}
+  m_Center: {x: 0.052444726, y: 0.11305803, z: 0.06671655}
 --- !u!1 &1360807346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1211664864}
-  spawnInterval: 4
+  spawnInterval: 27
   spawnAreaSize: {x: 100, y: 12, z: 20}
   spawnCenter: {fileID: 1635577478}
 --- !u!4 &1635577478
@@ -1708,6 +1743,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6662530792555743716, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ef2a25d60d174c45b8a244ffefa2f0f, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a32e7061fa7b7934aabd14e7978a52c3, type: 2}
+    - target: {fileID: -1415347444916710713, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f8ab5cd0fbc3c4bbfba6696462d0aa, type: 2}
+    - target: {fileID: -433781910674660567, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f8ab5cd0fbc3c4bbfba6696462d0aa, type: 2}
+    - target: {fileID: 805098333363774982, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f8ab5cd0fbc3c4bbfba6696462d0aa, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
       propertyPath: m_Name
       value: robot2
@@ -1716,6 +1771,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Destroy2
       objectReference: {fileID: 0}
+    - target: {fileID: 7622661218638243942, guid: 5c8d19dd2fe17674f825ab8d6493803e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f8ab5cd0fbc3c4bbfba6696462d0aa, type: 2}
     - target: {fileID: 1549492110316007173, guid: adb6c7c68312e004b85a6d2588fba795, type: 3}
       propertyPath: target
       value: 

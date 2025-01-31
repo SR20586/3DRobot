@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform target; // 追いかけるターゲット（カメラ）
+    public Transform player; // 追いかけるターゲット（カメラ）
     public float speed = 3.0f; // 移動速度
     public float rotationSpeed = 5.0f; // 回転速度
 
     void Update()
     {
-        if (target == null) return;
 
-        // ターゲットの方向を計算
-        Vector3 direction = (target.position - transform.position).normalized;
+        if (player == null)
+        {
+            Debug.LogWarning("Player not assigned!");
+            return;
+        }
 
-        // 敵の向きをゆっくりとターゲットに向ける
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // プレイヤーの方向を計算
+        Vector3 direction = (player.position - transform.position).normalized;
 
-        // ターゲットに向かって移動
-        transform.position += transform.forward * speed * Time.deltaTime;
+        // 敵をプレイヤーの方向に移動させる
+        transform.position += direction * speed * Time.deltaTime;
+
+        // 敵をプレイヤーの方向に向ける（オプション）
+        transform.LookAt(player);
     }
     private void OnTriggerEnter(Collider other) //ぶつかったら消える命令文開始
     {
