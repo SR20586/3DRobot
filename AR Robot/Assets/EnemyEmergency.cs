@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class EnemyEmergency : MonoBehaviour
 {
-    public GameObject imageObject; // 表示する UI Image オブジェクト
-    public GameObject imageObject2; // 敵のプレハブ
+    public AudioSource audioSource; // オーディオソース
+
     
 
     void Start()
     {
-        imageObject.SetActive(false); // 画像を非表示
-        imageObject2.SetActive(false); // 敵のプレハブを非表示
+        audioSource = GetComponent<AudioSource>(); // オーディオソースを取得
     }
-    
-    public void  OnTriggerStay(Collider collision)
+
+    void OnTriggerEnter(Collider collision) //ぶつかったら消える命令文開始
     {
         if (collision.CompareTag("Destroy2")) //ぶつかった相手がDestroy2だったら
         {
-            imageObject.SetActive(true); // 画像を表示
-            imageObject2.SetActive(true); // 敵のプレハブを表示
+            audioSource.Play(); // オーディオを再生
         }
     }
 }
