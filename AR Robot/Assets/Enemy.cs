@@ -7,7 +7,15 @@ public class Enemy : MonoBehaviour
     public Transform player; // 追いかけるターゲット（カメラ）
     public float speed = 3.0f; // 移動速度
     public float rotationSpeed = 5.0f; // 回転速度
+    public float fireInterval = 2f;   // ビーム発射間隔
+    public GameObject beamPrefab;     // ビームのプレハブ
+    public Transform firePoint;       // 発射位置
 
+    void Start()
+    {
+        // 一定間隔でビームを発射する
+        StartCoroutine(FireBeam());
+    }
     void Update()
     {
 
@@ -33,6 +41,25 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Destroy2"))//さっきつけたTagutukeruというタグがあるオブジェクト限定で～という条件の下
         {
             Destroy(BulletObject);//このゲームオブジェクトを消滅させる
+        }
+    }
+    IEnumerator FireBeam()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(fireInterval);
+
+            if (beamPrefab != null && firePoint != null)
+            {
+                // ビームを生成し、前方に発射
+                GameObject beam = Instantiate(beamPrefab, firePoint.position, firePoint.rotation);
+                Rigidbody rb = beam.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.velocity = firePoint.forward * 10f;  // ビームの速度
+                }
+                Destroy(beam, 1f); // 1秒後にビームを消す
+            }
         }
     }
 }

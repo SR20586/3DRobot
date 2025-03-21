@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyEmergency : MonoBehaviour
 {
     public AudioSource audioSource; // オーディオソース
-
     
 
     void Start()
