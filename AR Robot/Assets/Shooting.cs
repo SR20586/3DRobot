@@ -16,6 +16,10 @@ public class Shooting : MonoBehaviour
             {
                 Destroy(targetObject); //robot2(Clone)を消す
             }
+            if (ScoreManager.instance != null)
+            {
+                ScoreManager.instance.AddScore(1);
+            }
         }
     }
 }
