@@ -1,7 +1,4 @@
-# This .gitignore is tailored for Unity 2D projects
-# Based on common guidelines for Unity projects.
-
-# Ignore the auto-generated folders and files
+# Unity auto-generated folders
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -10,11 +7,30 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 UserSettings/
+[Cc]ache/
+[Cc]ollab/
 
-# Ignore asset store metadata
+# Crash reports
+*.stacktrace
 
+# Ignore Unity-generated lighting and baked data
+[Ll]ightmap[Ss]napshot
+LightingData.asset
 
-# Ignore Visual Studio / MonoDevelop project files
+# Ignore temporary files
+*.tmp
+*.tmp.*
+*.bak
+*.swp
+
+# Ignore Unity Collaborate snapshots (if using)
+.collab/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Visual Studio / MonoDevelop / Rider project files
 *.csproj
 *.unityproj
 *.sln
@@ -29,46 +45,33 @@ UserSettings/
 *.opendb
 *.VC.db
 
-# Ignore crash reports
-*.stacktrace
+# JetBrains Rider
+.idea/
+*.idea/*
 
-# Ignore Unity cache files
-/[Cc]ache/
-
-# Ignore system-specific files
-.DS_Store
-Thumbs.db
-
-# Ignore 2D-specific resources (if used)
-# For example, temporary sprite atlas or PSD working files
+# Ignore 2D/3D source image files (if working versions should not be versioned)
 *.psb
 *.kra
 *.xcf
 
-# Ignore generated LightingData files
-[Ll]ightmap[Ss]napshot
-LightingData.asset
+# Optional: Ignore Blender/Maya/3D software backup files (if used)
+*.blend1
+*.blend2
+*.fbx~
+*.ma~
+*.mb~
 
-# Ignore temporary Scene files
-*.tmp
-*.bak
-*.swp
-*.tmp.asset
+# Optional: Ignore Shader cache (if applicable)
+*.shadercache
 
-# Ignore Collaborate-generated files
-/[Cc]ollab/
-
-# Ignore JetBrains Rider project files
-.idea/
-*.idea/*
-
-# Uncomment if you use custom plugins or third-party tools (add your paths)
+# Optional: Ignore custom plugin or third-party tools (uncomment and adjust as needed)
 # /Assets/Plugins/
 # /Assets/ThirdParty/
 
-# Include README.md and other documentation files
+# Do not ignore metadata (important for Unity asset tracking)
+# Do not ignore .meta files
+
+# Allow essential docs to be tracked
 !.gitignore
 !README.md
 !LICENSE
-
-# End of file
