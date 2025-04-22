@@ -12,7 +12,7 @@
 UserSettings/
 
 # Ignore asset store metadata
-[Aa]ssets/**/*.meta
+
 
 # Ignore Visual Studio / MonoDevelop project files
 *.csproj
@@ -41,7 +41,6 @@ Thumbs.db
 
 # Ignore 2D-specific resources (if used)
 # For example, temporary sprite atlas or PSD working files
-*.spriteatlas
 *.psb
 *.kra
 *.xcf
