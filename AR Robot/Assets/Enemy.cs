@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
 
         // 敵をプレイヤーの方向に向ける（オプション）
-        transform.LookAt(player);
+        Vector3 directionToPlayer = transform.position - player.position; // プレイヤーから離れる方向
+        transform.rotation = Quaternion.LookRotation(directionToPlayer);
     }
     private void OnTriggerEnter(Collider other) //ぶつかったら消える命令文開始
     {
@@ -53,10 +54,12 @@ public class Enemy : MonoBehaviour
             {
                 // ビームを生成し、前方に発射
                 GameObject beam = Instantiate(beamPrefab, firePoint.position, firePoint.rotation);
+                beam.transform.rotation = firePoint.rotation * Quaternion.Euler(0, 180f, 0);
+                // ビームのRigidbodyを取得して前方に移動させる
                 Rigidbody rb = beam.GetComponent<Rigidbody>();
                 if (rb != null)
                 {
-                    rb.velocity = firePoint.forward * 10f;  // ビームの速度
+                    rb.velocity = beam.transform.forward * 10f; // speedは好きな値
                 }
                 Destroy(beam, 1f); // 1秒後にビームを消す
             }
